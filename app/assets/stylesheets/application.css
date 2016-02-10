@@ -1,0 +1,48 @@
+.navbar {
+	width: 100%;
+	border-radius: 0px;
+	height: 20px;
+	color:blue;
+	background-color: #F0F0F0;
+
+}
+
+.navbar a {
+	color:blue;
+
+	&:hover, &:visited {
+    color: blue;
+  } 
+}
+
+
+body a {
+	color:blue;
+
+	&:hover, &:visited {
+    color: blue;
+  } 
+}
+
+span.glyphicon {
+    font-size: 2.4em;
+}
+
+.appname{
+	font-family: times;
+	font-size: 350%;
+	color:blue;
+}
+ 
+#categories {
+	font-size: 120%;
+	text-align: left;
+}
+
+body {
+	background-color: #F2F2F2;
+}
+
+a {
+	color:blue;
+}

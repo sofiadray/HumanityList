@@ -1,0 +1,11 @@
+<div class ="container">
+<h2>Volunteer Opportunities</h2>
+
+<hr>
+
+<% @post.each do |post| %>
+	<%= post.updated_at.month%>/<%= post.updated_at.day %>  - 
+	<%= link_to post.title, charity_post_path(post.charity_id, post.id) %><br>
+	<hr>
+<% end %>
+</div>

@@ -1,0 +1,98 @@
+
+<center>
+<div class ="container">
+<div class="col-md-12">
+  <div class="appname">
+  humanityList
+  </div>
+  <h5> A global registry of charities for communites to connect </h5>
+  <br>
+  <br>
+</div>
+<div class ="row">
+<div class="col-md-6">
+ <span class="glyphicon glyphicon-home" aria-hidden="true"> </span><br>
+  <h3>For charities</h3> 
+ 
+
+<!-- Button trigger modal -->
+<% if user_signed_in? %>
+  <% if current_user.charities.count > 0%>
+  <%= link_to "Post opportunities", "#" %><br>
+   <%= link_to "Edit Charity Profile", edit_charity_path(current_user.charities.last.id) %>
+   <% else %>
+    <%= link_to "Build Charity Profile", new_charity_path(current_user.id) %>
+    <% end %>
+     <% else %>
+  <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#signUpModal">
+  Sign up today!
+</button>
+  <% end %>
+
+<h5> Let the world know about your cause <br>
+Attract passionate volunteers <br>
+Find local volunteers. </h5>
+
+
+<!-- Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign up your charity!</h4>
+      </div>
+      <div class="modal-body">
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+      </div>
+      <div class="modal-footer">
+  
+  <div><%= f.submit "Build your charity profile!", class: "btn btn-primary" %></div>
+      </div>
+   <% end %>
+
+    </div>
+
+  </div>
+
+</div> 
+<br>
+
+<br>
+<!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#loginModal">
+ Login
+</button> -->
+
+<!-- Modal -->
+</div>
+
+<div class ="col-md-6">
+  <span class="glyphicon glyphicon-user" aria-hidden="true"> </span><br>
+<h3> For volunteers </h3>
+    
+ 
+  
+<%= link_to "Find opportunities by Category", categories_path %><br>
+<%= link_to "Find opportunities by City", cities_path %>
+<h5> List your organization in a global registry <br>
+Attract passionate volunteers <br>
+Find local volunteers. </h5>
+</div> 
+
+</div>
+
+
+</center>
+
+

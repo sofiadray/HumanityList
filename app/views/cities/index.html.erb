@@ -1,0 +1,20 @@
+<div class = "container">
+<%states = [] %>
+	<% @cities.each do |c| %>
+		<%states << c.state %>
+		<%states= states.uniq %>
+	<%end %>
+
+	<% states.each do |s| %>
+	
+	<div class= "col-md-2">
+	<hr>
+		<h5><%= s %></h5>
+		<% cities = City.where(state:s)%>
+		<% cities.each do |c|%>
+		<h6><%= link_to "\t #{c.name}", city_path(c.id) %></h6>
+		<% end %>
+		</div>
+	
+	<% end %>
+</div>
