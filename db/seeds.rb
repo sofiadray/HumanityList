@@ -598,4 +598,19 @@
 # end
 
 
+###################################
+# parsed_state_city = string.split("\n").delete_if{|a| a == ""}
+
+# state_city_hash = {}
+# current_city = nil
+# parsed_state_city.each do |name|
+#   if name.capitalize == name
+#     state_city_hash[name] = []
+#     current_city = name
+#   else
+#     state_city_hash[current_city] << name
+#   end
+# end
+
+
 
