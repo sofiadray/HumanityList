@@ -1,7 +1,12 @@
 <center>
 <div class="col-md-12">
 <% @categories.each do |c| %>
-<div class="col-md-3" id="categories"><%= link_to "#{c.name}", category_path(c.id)%></div>
+<div class="col-md-3" id="categories"><%= link_to "#{c.name}", category_path(c.id)%>
+<% charities = Charity.where(category_id: c.id)%>
+<%if charities.count > 0 %>
+ (<%= charities.count %>)
+ <%end%>
+	</div>
 <%end%>
 </div>
 </center>

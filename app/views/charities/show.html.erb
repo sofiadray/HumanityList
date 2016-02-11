@@ -1,39 +1,41 @@
 <div class="container">
-<% flash[:message] %>
-<div class="row">
-  <h2><%= @charity.name.capitalize %></h2>
-   <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"> </span> like <br>
+  <% flash[:message] %>
+  <center>
+     <h2><%= @charity.name.capitalize %></h2>
+     </center>
+  <div class="col-md-3">
+    <h2><%= @charity.name.capitalize %></h2>
+    <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>like  <br>
 
+  Website:<%= link_to @charity.website, @charity.website, target: "_blank" %>
+
+About:<%= @charity.overview %>
+
+    <% if @charity.real == true %>
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> This is a real charity.  <br>
+      (HumanityList is also for posting ideas for possible charities! Post yours here!)
+    <% elsif @charity.real == false %>
+      <%= "This is an idea for a charity." %>  
+    <% end %>
+  
+<% if  @charity.category %>
+  <h3>Category</h3>
+
+  <%= @charity.category.name %>
+
+  <% end %>
+</div>
+
+
+  
+
+  <div class="col-md-9">
 <%= link_to "Post a new listing", new_charity_post_path(@charity.id), class: "btn btn-default" %>
-  <hr>
-
+</div>
   <h3><%= t('.about') %> <%= @charity.name %></h3>
 
   <%= image_tag @charity.image, width: 100 %>
 
-  <p>Website:<%= link_to @charity.website, @charity.website, target: "_blank" %></p>
-
-  <p>About:<%= @charity.overview %></p>
-
-  	<% if @charity.real == true %>
-  		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> This is a real charity.  <br>
-      (HumanityList is also for posting ideas for possible charities! Post yours here!)
-  	<% elsif @charity.real == false %>
-  		<%= "This is an idea for a charity." %>  
-  	<% end %>
-  </p>
-
-  <hr>
-</div>
-<% if  @charity.category %>
-<div class="row">
-
-  <h3>Category</h3>
-
-  <%= @charity.category.name %>
-<hr>
-</div>
-  <% end %>
 
 
 <div class="row">
@@ -42,7 +44,7 @@
 
   <%= link_to t('.volunteer_link'), charity_posts_path(@charity.id) %>
 
-  <hr>
+  
 </div>
 <div class="row">
  
@@ -52,7 +54,7 @@
 
 </div>
 <div class="row">
-<hr>
+
   <%= link_to t('.edit_charity_text'), edit_charity_path(@charity.id) %>&nbsp;
 
   <%= link_to t('.delete_charity_text'), {action: :destroy, id: @charity.id}, method: :delete %>&nbsp;

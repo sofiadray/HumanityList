@@ -1,0 +1,8 @@
+<center>
+<div class="col-md-12">
+<h1><%= @category.name.singularize %> Charities </h1><br>
+<% @charities.each do |c| %>
+<h4><%= link_to c.name, charity_path(c.id) %></h4><br>
+<%end%>
+</div>
+</center>

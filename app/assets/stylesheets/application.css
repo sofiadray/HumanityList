@@ -1,3 +1,4 @@
+
 .navbar {
 	width: 100%;
 	border-radius: 0px;
@@ -25,7 +26,8 @@ body a {
 }
 
 span.glyphicon {
-    font-size: 2.4em;
+    font-size: 1.7em;
+   /* color: purple;*/
 }
 
 .appname{
