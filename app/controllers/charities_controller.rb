@@ -18,7 +18,8 @@ class CharitiesController < ApplicationController
 	end
 
 	def create
-		@charity = Charity.new(charity_params)
+		@user = User.find(current_user.id)
+		@charity = @user.charities.new(charity_params)
 
 		if @charity.save
 			flash[:message] = "Here is your charity's page!"
@@ -58,6 +59,6 @@ class CharitiesController < ApplicationController
 private
 
 	def charity_params
-		params.require(:charity).permit(:name, :image, :website, :overview, :real, :category_id)
+		params.require(:charity).permit(:name, :image, :website, :overview, :real, :category_id, :user_id)
 	end
 end

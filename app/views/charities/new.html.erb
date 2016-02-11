@@ -3,7 +3,6 @@
 
   <h2> Build Charity Profile </h2>
     <%= simple_form_for @charity do |form| %>
-    <% form.hidden_field :user_id, value: current_user.id %>
       <%= form.input :name, label: "Charity Name" %>
      <%= form.input :image, class: 'btn btn-default' %>
       <%= form.input :website %>

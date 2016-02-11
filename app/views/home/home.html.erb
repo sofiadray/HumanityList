@@ -18,8 +18,8 @@
 <!-- Button trigger modal -->
 <% if user_signed_in? %>
   <% if current_user.charities.count > 0%>
-  <%= link_to "Post opportunities", "#" %><br>
-   <%= link_to "Edit Charity Profile", edit_charity_path(current_user.charities.last.id) %>
+  <%= link_to "Post opportunities", new_charity_post_path(current_user.charities.last.id) %><br>
+   <%= link_to "View my charities", "#"%>
    <% else %>
     <%= link_to "Build Charity Profile", new_charity_path(current_user.id) %>
     <% end %>

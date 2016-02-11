@@ -3,11 +3,8 @@
 	<h3> on: <%= @post.updated_at.month%> / <%= @post.updated_at.day %>  - 
  		<%= @post.title %> </h3> <br>
 		<h4><%= @post.content %></h4>
-		<h4> for: <%= @post.charity.name %></h4>
-</div>
-
-<h2><%= @post.title %></h2>
-<h3><%= @charity.name %></h3>
+		<h4> posted by: <%= link_to @post.charity.name, charity_path(@post.charity.id) %></h4>
+		<h4> contact: </h4>
 
 <hr>
 
@@ -15,9 +12,6 @@
 
 <%= link_to "Delete this post", {action: :destroy, id: @post.id}, method: :delete %>
 
-<hr>
 
 
-
-<p>Description: <%= @post.content %></p>
-
+</div>
