@@ -155,155 +155,79 @@ State.create(name: "Massachusetts")
  City.create(name: city.titleize, state: State.find_by_name("Massachusetts")) 
 end 
 
+State.create(name: "Michigan")
+["ann arbor","battle creek","central michigan","detroit metro","flint","grand rapids","holland","jackson",
+"kalamazoo","lansing","monroe","muskegon","northern michigan","port huron","saginaw-midland-baycity",
+"southwest michigan","the thumb","upper peninsula"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Michigan"))
+end 
+
+State.create(name: "Minnesota")
+["bemidji","brainerd","duluth / superior","mankato","minneapolis / st paul","rochester","southwest MN","st cloud"
+].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Minnesota"))
+end 
+
+State.create(name: "Mississippi")
+["gulfport / biloxi","hattiesburg","jackson","meridian","north mississippi","southwest MS"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Mississippi"))
+end 
+State.create(name: "Missouri") 
+["columbia / jeff city","joplin","kansas city","kirksville","lake of the ozarks","southeast missouri","springfield","st joseph","st louis"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Missouri")) 
+end 
+
+State.create(name: "Montana")
+["billings","bozeman","butte","great falls","helena","kalispell","missoula","eastern montana"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Montana"))
+end 
+
+State.create(name: "Nebraska") 
+["grand island","lincoln","north platte","omaha / council bluffs","scottsbluff / panhandle"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("Nebraska"))
+end 
+
+State.create(name: "Nevada")
+["elko","las vegas","reno / tahoe"].each do |city|
+  City.create(name: "Nevada", state: State.find_by_name("Nevada")) 
+end 
+
+State.create(name: "New Hampshire") 
+City.create(name: "New Hampshire", state: State.find_by_name("New Hampshire"))
+
+State.create(name: "New Jersey")
+["central NJ","jersey shore","north jersey","south jersey"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("New Jersey"))
+end 
+
+State.create(name: "New Mexico") 
+["albuquerque","clovis / portales","farmington","las cruces","roswell / carlsbad","santa fe / taos"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("New Mexico")) 
+end 
+
+State.create(name: "New York") 
+["albany","binghamton","buffalo","catskills","chautauqua","elmira-corning","finger lakes","glens falls",
+ "hudson valley","ithaca","long island","new york city","oneonta","plattsburgh-adirondacks","potsdam-canton-massena", "rochester","syracuse","twin tiers NY/PA","utica-rome-oneida","watertown"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("New York"))
+end 
+
+State.create(name: "North Carolina")
+["asheville","boone","charlotte","eastern NC","fayetteville","greensboro","hickory / lenoir","jacksonville",
+ "outer banks","raleigh / durham / CH","wilmington","winston-salem"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("North Carolina"))
+end 
+
+State.create(name: "North Dakota")
+["bismarck","fargo / moorhead","grand forks","north dakota"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("North Dakota"))
+end 
+
+State.create(name: "Ohio") 
+["akron / canton","ashtabula","athens","chillicothe","cincinnati","cleveland","columbus",
+"dayton / springfield","lima / findlay","mansfield","sandusky","toledo","tuscarawas co","youngstown","zanesville / cambridge"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("Ohio"))
+end 
 =begin
-Michigan
-
-ann arbor
-battle creek
-central michigan
-detroit metro
-flint
-grand rapids
-holland
-jackson
-kalamazoo
-lansing
-monroe
-muskegon
-northern michigan
-port huron
-saginaw-midland-baycity
-southwest michigan
-the thumb
-upper peninsula
-Minnesota
-
-bemidji
-brainerd
-duluth / superior
-mankato
-minneapolis / st paul
-rochester
-southwest MN
-st cloud
-Mississippi
-
-gulfport / biloxi
-hattiesburg
-jackson
-meridian
-north mississippi
-southwest MS
-Missouri
-
-columbia / jeff city
-joplin
-kansas city
-kirksville
-lake of the ozarks
-southeast missouri
-springfield
-st joseph
-st louis
-
-Montana
-
-billings
-bozeman
-butte
-great falls
-helena
-kalispell
-missoula
-eastern montana
-Nebraska
-
-grand island
-lincoln
-north platte
-omaha / council bluffs
-scottsbluff / panhandle
-Nevada
-
-elko
-las vegas
-reno / tahoe
-New Hampshire
-
-new hampshire
-New Jersey
-
-central NJ
-jersey shore
-north jersey
-south jersey
-New Mexico
-
-albuquerque
-clovis / portales
-farmington
-las cruces
-roswell / carlsbad
-santa fe / taos
-New York
-
-albany
-binghamton
-buffalo
-catskills
-chautauqua
-elmira-corning
-finger lakes
-glens falls
-hudson valley
-ithaca
-long island
-new york city
-oneonta
-plattsburgh-adirondacks
-potsdam-canton-massena
-rochester
-syracuse
-twin tiers NY/PA
-utica-rome-oneida
-watertown
-North Carolina
-
-asheville
-boone
-charlotte
-eastern NC
-fayetteville
-greensboro
-hickory / lenoir
-jacksonville
-outer banks
-raleigh / durham / CH
-wilmington
-winston-salem
-North Dakota
-
-bismarck
-fargo / moorhead
-grand forks
-north dakota
-Ohio
-
-akron / canton
-ashtabula
-athens
-chillicothe
-cincinnati
-cleveland
-columbus
-dayton / springfield
-lima / findlay
-mansfield
-sandusky
-toledo
-tuscarawas co
-youngstown
-zanesville / cambridge
 Oklahoma
 
 lawton
@@ -464,49 +388,5 @@ guam-micronesia
 puerto rico
 U.S. virgin islands"
 
-arrays = []
-idxs = []
-array = string.split("\n").delete_if{|a| a == ""}
-array.each do |a|
-    if a[0] == a[0].upcase
-     idxs << array.index(a)
-    end
-end
-
-i = 0
-while i < 52
-	arrays << array.slice(idxs[i]..idxs[i+1]-1)
-	i += 1
-end
-
-arrays.each do |a|
-	state = a.shift
-	for i in 1..a.length
-		unless a[i] == nil
-		city = City.create(name:a[i], state: state, country: "United States")
-		if city.save
-			puts "name: #{a[i]}, state: #{state}, country:#{"United States"} Created"
-		else puts "city not saved"
-		end
-		end
-	end
-puts "-------------------------------------"
-end
 =end
-
-###################################
-# parsed_state_city = string.split("\n").delete_if{|a| a == ""}
-
-# state_city_hash = {}
-# current_city = nil
-# parsed_state_city.each do |name|
-#   if name.capitalize == name
-#     state_city_hash[name] = []
-#     current_city = name
-#   else
-#     state_city_hash[current_city] << name
-#   end
-# end
-
-
 
