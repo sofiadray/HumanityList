@@ -3,7 +3,7 @@
 	
 	<div class= "col-md-2">
 	<hr>
-		<h5><%= s %></h5>
+		<h5><%= state.name %></h5>
 		<% cities = state.cities%>
 		<% cities.each do |c|%>
 		<h6><%= link_to "\t #{c.name}", city_path(c.id) %></h6>
