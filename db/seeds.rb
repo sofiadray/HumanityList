@@ -227,26 +227,19 @@ State.create(name: "Ohio")
 "dayton / springfield","lima / findlay","mansfield","sandusky","toledo","tuscarawas co","youngstown","zanesville / cambridge"].each do |city|
  City.create(name: city.titleize, state: State.find_by_name("Ohio"))
 end 
+
+State.create(name: "Oklahoma")
+["lawton","northwest OK","oklahoma city","stillwater","tulsa"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("Oklahoma"))
+end 
+
+State.create(name: "Oregon")
+["bend","corvallis/albany","east oregon","eugene","klamath falls","medford-ashland","oregon coast","portland",
+ "roseburg","salem"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Oregon"))
+end 
+
 =begin
-Oklahoma
-
-lawton
-northwest OK
-oklahoma city
-stillwater
-tulsa
-Oregon
-
-bend
-corvallis/albany
-east oregon
-eugene
-klamath falls
-medford-ashland
-oregon coast
-portland
-roseburg
-salem
 Pennsylvania
 
 altoona-johnstown
