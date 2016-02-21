@@ -42,225 +42,120 @@
 
 
 # Create Cities 
+State.create({name: "Alabama"})
+["auburn","birmingham","dothan","florence / muscle shoals","gadsden-anniston","huntsville / decatur","mobile","montgomery","tuscaloosa"].each do |c|
+  City.create({name: c.titleize,  state_id: State.find_by_name("Alabama").id}) 
+end 
 
-string = "Alabama
+State.create(name: "Alaska")
+["anchorage / mat-su", "fairbanks","kenai peninsula","southeast alaska"].each do |city|
+ City.create({name: city.titleize, state_id: State.find_by_name("Alaska").id}) 
+end 
 
-auburn
-birmingham
-dothan
-florence / muscle shoals
-gadsden-anniston
-huntsville / decatur
-mobile
-montgomery
-tuscaloosa
-Alaska
+State.create(name: "Arizona") 
+["flagstaff / sedona", "mohave county", "phoenix", "prescott","show low","sierra vista","tucson","yuma"].each do |city|
+ City.create({name: city.titleize, state_id: State.find_by_name("Arizona").id})
+end 
 
-anchorage / mat-su
-fairbanks
-kenai peninsula
-southeast alaska
-Arizona
+State.create(name:"Arkansas") 
+["fayetteville","fort smith","jonesboro","little rock","texarkana"].each do |city|
+ City.create(name: city.titleize, state_id: State.find_by_name("Arkansas").id)
+end 
 
-flagstaff / sedona
-mohave county
-phoenix
-prescott
-show low
-sierra vista
-tucson
-yuma
-Arkansas
+State.create(name: "California")
+["bakersfield","chico","fresno / madera","gold country","hanford-corcoran",
+"humboldt county","imperial county","inland empire","los angeles","mendocino county",
+"merced","modesto","monterey bay","orange county","palm springs","redding","sacramento",
+"san diego","san francisco bay area","san luis obispo","santa barbara","santa maria","siskiyou county","stockton","susanville","ventura county","visalia-tulare","yuba-sutter"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("California"))
+end 
+ 
+State.create(name: "Colorado")
+["boulder","colorado springs","denver","eastern CO","fort collins / north CO","high rockies","pueblo","western slope"].each do |city|
+  City.create(name: city.titleize, state_id: State.find_by_name("Colorado").id)
+end 
 
-fayetteville
-fort smith
-jonesboro
-little rock
-texarkana
-California
+State.create(name: "Connecticut")
+["eastern CT","hartford","new haven", "northwest CT"].each do |city|
+  City.create(name: city.titleize, state_id: State.find_by_name("Connecticut").id) 
+end 
 
-bakersfield
-chico
-fresno / madera
-gold country
-hanford-corcoran
-humboldt county
-imperial county
-inland empire
-los angeles
-mendocino county
-merced
-modesto
-monterey bay
-orange county
-palm springs
-redding
-sacramento
-san diego
-san francisco bay area
-san luis obispo
-santa barbara
-santa maria
-siskiyou county
-stockton
-susanville
-ventura county
-visalia-tulare
-yuba-sutter
-Colorado
+State.create(name: "Delaware")
+City.create(name: "Delaware", state_id: State.find_by_name("Delaware").id)
 
-boulder
-colorado springs
-denver
-eastern CO
-fort collins / north CO
-high rockies
-pueblo
-western slope
-Connecticut
+State.create(name: "District of Columbia")
+City.create(name: "Washington", state_id: State.find_by_name("District of Columbia").id)
 
-eastern CT
-hartford
-new haven
-northwest CT
-Delaware
+State.create(name: "Florida")
+["broward county","daytona beach","florida keys","fort lauderdale","ft myers / SW florida","gainesville",
+"heartland florida","jacksonville","lakeland","miami / dade","north central FL","ocala","okaloosa / walton",
+"orlando","panama city","pensacola","sarasota-bradenton","south florida","space coast","st augustine",
+"tallahassee","tampa bay area","treasure coast","palm beach county"].each do |city|
+  City.create(name: city.titleize, state_id: State.find_by_name("Florida").id)
+end
 
-delaware
-District of Columbia
 
-washington
-Florida
+State.create(name: "Georgia")
+["albany", "athens","atlanta","augusta","brunswick","columbus","macon / warner robins","northwest GA",
+"savannah / hinesville","statesboro","valdosta"].each do |city|
+ City.create(name: city.titleize, state_id: State.find_by_name("Georgia").id)
+end 
 
-broward county
-daytona beach
-florida keys
-fort lauderdale
-ft myers / SW florida
-gainesville
-heartland florida
-jacksonville
-lakeland
-miami / dade
-north central FL
-ocala
-okaloosa / walton
-orlando
-panama city
-pensacola
-sarasota-bradenton
-south florida
-space coast
-st augustine
-tallahassee
-tampa bay area
-treasure coast
-palm beach county
-Georgia
+State.create(name: "Hawaii")
+City.create(name: "Hawaii", state_id: State.find_by_name("Hawaii").id)
 
-albany
-athens
-atlanta
-augusta
-brunswick
-columbus
-macon / warner robins
-northwest GA
-savannah / hinesville
-statesboro
-valdosta
-Hawaii
+State.create(name: "Idaho")
+["boise","east idaho","lewiston / clarkston","twin falls"].each do |city|
+ City.create(name: city.titleize, state_id: State.find_by_name("Idaho").id)
+end
 
-hawaii
-Idaho
+State.create(name: "Illinois")
+["bloomington-normal","champaign urbana","chicago","decatur","la salle co","mattoon-charleston","peoria",
+"rockford","southern illinois","springfield","western IL"].each do |city|
+ City.create(name: city.titleize, state_id: State.find_by_name("Illinois").id)
+end 
 
-boise
-east idaho
-lewiston / clarkston
-twin falls
-Illinois
+State.create(name: "Indiana") 
+["bloomington", "evansville","fort wayne","indianapolis","kokomo","lafayette / west lafayette","muncie / anderson","richmond","south bend / michiana","terre haute"].each do |city|
+ City.create(name: city.titleize, state_id: State.find_by_name("Indiana").id)
+end 
 
-bloomington-normal
-champaign urbana
-chicago
-decatur
-la salle co
-mattoon-charleston
-peoria
-rockford
-southern illinois
-springfield
-western IL
-Indiana
+State.create(name: "Iowa")
+["ames","cedar rapids","des moines","dubuque","fort dodge","iowa city", "mason city", "quad cities",
+"sioux city","southeast IA","waterloo / cedar falls"].each do |city|
+ City.create(name: city.titleize, state_id: State.find_by_name("Iowa").id) 
+end 
 
-bloomington
-evansville
-fort wayne
-indianapolis
-kokomo
-lafayette / west lafayette
-muncie / anderson
-richmond
-south bend / michiana
-terre haute
-Iowa
+State.create(name: "Kansas")
+["lawrence","manhattan","northwest KS","salina","southeast KS","southwest KS","topeka","wichita"].each do |city|
+ City.create(name: city.titleize, state_id: State.find_by_name("Kansas").id)
+end 
 
-ames
-cedar rapids
-des moines
-dubuque
-fort dodge
-iowa city
-mason city
-quad cities
-sioux city
-southeast IA
-waterloo / cedar falls
-Kansas
 
-lawrence
-manhattan
-northwest KS
-salina
-southeast KS
-southwest KS
-topeka
-wichita
-Kentucky
+State.create(name: "Kentucky")
+["bowling green","eastern kentucky","lexington","louisville","owensboro","western KY"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("Kentucky") )
+end
 
-bowling green
-eastern kentucky
-lexington
-louisville
-owensboro
-western KY
-Louisiana
+State.create(name:"Louisiana")
+["baton rouge","central louisiana","houma","lafayette","lake charles","monroe","new orleans","shreveport"].each do |city|
+    City.create(name: city.titleize, state: State.find_by_name("Louisiana"))
+end
 
-baton rouge
-central louisiana
-houma
-lafayette
-lake charles
-monroe
-new orleans
-shreveport
-Maine
+State.create(name: "Maine") 
+City.create(name: "Maine", state: State.find_by_name("Maine")) 
 
-maine
-Maryland
+State.create(name: "Maryland")
+["annapolis","baltimore","eastern shore","frederick","southern maryland","western maryland"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("Maryland")) 
+end 
 
-annapolis
-baltimore
-eastern shore
-frederick
-southern maryland
-western maryland
-Massachusetts
+State.create(name: "Massachusetts") 
+["boston","cape cod / islands","south coast","western massachusetts","worcester / central MA"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("Massachusetts")) 
+end 
 
-boston
-cape cod / islands
-south coast
-western massachusetts
-worcester / central MA
+=begin
 Michigan
 
 ann arbor
@@ -310,6 +205,7 @@ southeast missouri
 springfield
 st joseph
 st louis
+
 Montana
 
 billings
@@ -596,7 +492,7 @@ arrays.each do |a|
 	end
 puts "-------------------------------------"
 end
-
+=end
 
 ###################################
 # parsed_state_city = string.split("\n").delete_if{|a| a == ""}

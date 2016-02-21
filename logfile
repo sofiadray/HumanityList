@@ -1,0 +1,8 @@
+LOG:  database system was shut down at 2016-02-13 15:00:43 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "cities" already exists
+STATEMENT:  CREATE TABLE "cities" ("id" serial primary key, "state_id" integer) 
+ERROR:  relation "cities" already exists
+STATEMENT:  CREATE TABLE "cities" ("id" serial primary key, "state_id" integer) 
