@@ -239,147 +239,75 @@ State.create(name: "Oregon")
   City.create(name: city.titleize, state: State.find_by_name("Oregon"))
 end 
 
-=begin
-Pennsylvania
+State.create(name: "Pennsylvania")
+["altoona-johnstown","cumberland valley","erie","harrisburg","lancaster","lehigh valley","meadville","philadelphia","pittsburgh","poconos","reading","scranton / wilkes-barre","state college","williamsport","york"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Pennsylvania"))
+end 
+              
+State.create(name: "Rhode Island")
+City.create(name: "Rhode Island", state: State.find_by_name("Rhode Island"))
 
-altoona-johnstown
-cumberland valley
-erie
-harrisburg
-lancaster
-lehigh valley
-meadville
-philadelphia
-pittsburgh
-poconos
-reading
-scranton / wilkes-barre
-state college
-williamsport
-york
-Rhode Island
+State.create(name: "South Carolina")
+["charleston","columbia","florence","greenville / upstate","hilton head","myrtle beach"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("South Carolina"))
+end 
 
-rhode island
-South Carolina
+State.create(name: "South Dakota")
+["northeast SD","pierre / central SD","rapid city / west SD","sioux falls / SE SD","south dakota"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("South Dakota"))
+end 
 
-charleston
-columbia
-florence
-greenville / upstate
-hilton head
-myrtle beach
-South Dakota
+State.create(name: "Tennessee")
+["chattanooga","clarksville","cookeville","jackson","knoxville","memphis","nashville","tri-cities"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Tennessee"))
+end 
 
-northeast SD
-pierre / central SD
-rapid city / west SD
-sioux falls / SE SD
-south dakota
-Tennessee
+State.create(name: "Texas")
+["abilene","amarillo","austin","beaumont / port arthur","brownsville","college station","corpus christi","dallas / fort worth","deep east texas","del rio / eagle pass","el paso","galveston","houston","killeen / temple / ft hood",
+"laredo","lubbock","mcallen / edinburg","odessa / midland","san angelo","san antonio","san marcos","southwest TX",
+"texoma","tyler / east TX","victoria","waco","wichita falls"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Texas"))
+end 
 
-chattanooga
-clarksville
-cookeville
-jackson
-knoxville
-memphis
-nashville
-tri-cities
-Texas
+State.create(name: "Utah")
+["logan","ogden-clearfield","provo / orem","salt lake city","st george"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Utah"))
+end
 
-abilene
-amarillo
-austin
-beaumont / port arthur
-brownsville
-college station
-corpus christi
-dallas / fort worth
-deep east texas
-del rio / eagle pass
-el paso
-galveston
-houston
-killeen / temple / ft hood
-laredo
-lubbock
-mcallen / edinburg
-odessa / midland
-san angelo
-san antonio
-san marcos
-southwest TX
-texoma
-tyler / east TX
-victoria
-waco
-wichita falls
-Utah
+State.create(name: "Vermont")
+City.create(name: "Vermont", state: State.find_by_name("Vermont"))
 
-logan
-ogden-clearfield
-provo / orem
-salt lake city
-st george
-Vermont
 
-vermont
-Virginia
+State.create(name: "Virginia")
+["charlottesville","danville","fredericksburg","hampton roads","harrisonburg","lynchburg","new river valley",
+"richmond","roanoke","southwest VA","winchester"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Virginia"))
+end 
 
-charlottesville
-danville
-fredericksburg
-hampton roads
-harrisonburg
-lynchburg
-new river valley
-richmond
-roanoke
-southwest VA
-winchester
-Washington
+State.create(name: "Washington") 
+["bellingham","kennewick-pasco-richland","moses lake","olympic peninsula","pullman / moscow","seattle-tacoma",
+"skagit / island / SJI","spokane / coeur d'alene","wenatchee","yakima"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Washington"))
+end 
 
-bellingham
-kennewick-pasco-richland
-moses lake
-olympic peninsula
-pullman / moscow
-seattle-tacoma
-skagit / island / SJI
-spokane / coeur d'alene
-wenatchee
-yakima
-West Virginia
+State.create(name: "West Virginia")
+["charleston","eastern panhandle","huntington-ashland","morgantown","northern panhandle","parkersburg-marietta",
+"southern WV","west virginia (old)"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("West Virginia"))
+end
 
-charleston
-eastern panhandle
-huntington-ashland
-morgantown
-northern panhandle
-parkersburg-marietta
-southern WV
-west virginia (old)
-Wisconsin
+State.create(name: "Wisconsin")
+["appleton-oshkosh-FDL", "eau claire","green bay","janesville","kenosha-racine","la crosse","madison","milwaukee",
+"northern WI","sheboygan","wausau"].each do |city|
+  City.create(name: city.titleize, state: State.find_by_name("Wisconsin"))
+end 
 
-appleton-oshkosh-FDL
-eau claire
-green bay
-janesville
-kenosha-racine
-la crosse
-madison
-milwaukee
-northern WI
-sheboygan
-wausau
-Wyoming
+State.create(name: "Wyoming")
+City.create(name: "Wyoming", state: State.find_by_name("Wyoming"))
 
-wyoming
-Territories
+State.create(name:"Territories")
+["guam-micronesia","puerto rico", "U.S. virgin islands"].each do |city|
+ City.create(name: city.titleize, state: State.find_by_name("Territories"))
+end 
 
-guam-micronesia
-puerto rico
-U.S. virgin islands"
-
-=end
 
