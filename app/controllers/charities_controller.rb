@@ -1,64 +1,65 @@
 class CharitiesController < ApplicationController
-	def index
-		  if params[:search]
-		    @charities = Charity.search(params[:search]).order("created_at DESC")
-		  else
-		    @charities = Charity.all.order('created_at DESC')
-		  end
-	end
+  def index
+    if params[:search]
+      @charities = Charity.search(params[:search]).order("created_at DESC")
+    else
+      @charities = Charity.all.order('created_at DESC')
+    end
+  end
 
-	def show
-		# @user = User.find(current_user.id)
-		@charity = Charity.find(params[:id])
-	end
+  def show
+    # @user = User.find(current_user.id)
+    @charity = Charity.find(params[:id])
+  end
 
-	def new
-		@user = User.find(current_user.id)
-		@charity = @user.charities.new
-	end
+  def new
+    @user = User.find(current_user.id)
+    @charity = @user.charities.new
+  end
 
-	def create
-		@user = User.find(current_user.id)
-		@charity = @user.charities.new(charity_params)
+  def create
+    @user = User.find(current_user.id)
+    @charity = @user.charities.new(charity_params)
 
-		if @charity.save
-			flash[:message] = "Here is your charity's page!"
-			redirect_to charity_path(@charity.id)
-		else
-			render :new
-		end
+    if @charity.save
+      flash[:message] = "Here is your charity's page!"
+      redirect_to charity_path(@charity.id)
+    else
+      render :new
+    end
 
-	end
+  end
 
-	def edit
-		@charity = Charity.find(params[:id])
-	end
+  def edit
+    @charity = Charity.find(params[:id])
+  end
 
-	def update
-		@charity = Charity.find(params[:id])
-		@charity.update_attributes(charity_params)
+  def update
+    @charity = Charity.find(params[:id])
+    @charity.update_attributes(charity_params)
 
-		if @charity.update_attributes(charity_params)
-			redirect_to charity_path(@charity.id)
-		else
-			render :new
-		end
-	end
+    if @charity.update_attributes(charity_params)
+      redirect_to charity_path(@charity.id)
+    else
+      render :new
+    end
+  end
 
-	def destroy
-		@charity = Charity.find(params[:charity_id])
-		@charity.destroy
+  def destroy
+    @charity = Charity.find(params[:charity_id])
+    @charity.destroy
 
-		if @charity.destroy
-			redirect_to charities_path
-		else
-			render :new
-		end
-	end
+    if @charity.destroy
+      redirect_to charities_path
+    else
+      render :new
+    end
+  end
 
-private
+  private
 
-	def charity_params
-		params.require(:charity).permit(:name, :image, :website, :overview, :real, :category_id, :user_id)
-	end
+  def charity_params
+    params.require(:charity).permit(:name, :image, :website, :overview, :real, 
+                                    :category_id, :user_id, :cities =>[])
+  end
 end
