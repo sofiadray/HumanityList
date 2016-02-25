@@ -43,6 +43,7 @@
 
 
 # Create Cities 
+
 State.create({name: "Alabama"})
 ["auburn","birmingham","dothan","florence / muscle shoals","gadsden-anniston","huntsville / decatur","mobile","montgomery","tuscaloosa"].each do |c|
   City.create({name: c.titleize,  state_id: State.find_by_name("Alabama").id}) 

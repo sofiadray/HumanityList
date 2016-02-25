@@ -11,5 +11,5 @@ class Charity < ActiveRecord::Base
 			:presence => true,
 			:content_type => { :content_type => /\Aimage\/.*\Z/ },
 			:size => { :less_than => 1.megabyte }
->>>>>>> 0ea15cc21d5c88a8342009437ff50f0854ae28cd
+
 end
