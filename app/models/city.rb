@@ -1,4 +1,8 @@
 class City < ActiveRecord::Base
-	has_and_belongs_to_many :cities
-	accepts_nested_attributes_for :charities
+
+  #has_many_and_belongs_to :charities
+ belongs_to :state
+ 
+ validates :name, presence: true
+ validates :name, uniqueness: { scope: [:name, :state_id] }
 end

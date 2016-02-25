@@ -1,15 +1,10 @@
 class CitiesController < ApplicationController
-	def index
-		@cities = City.all
-	end
 
-	def show
+  def index
+    @cities = City.all
+     @states = State.all 
+  end
 
-	end
-
-private
-
-	def city_params
-		params.require(:city).permit
-	end
+  def show
+  end
 end
