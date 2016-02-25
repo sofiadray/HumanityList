@@ -1,11 +1,9 @@
 class CitiesController < ApplicationController
-	def index
-		@cities = City.all
-	end
+  def index
+    @cities = City.all
+     @states = State.all 
+  end
 
-	def show
-
-	end
-
-
+  def show
+  end
 end
