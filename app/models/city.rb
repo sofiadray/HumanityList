@@ -1,5 +1,6 @@
 class City < ActiveRecord::Base
-  #has_many_and_belongs_to :charities
+ has_many :geocharitables
+ has_many :charities, through: :geocharitables
  belongs_to :state
  
  validates :name, presence: true
