@@ -10,5 +10,10 @@ class CategoriesController < ApplicationController
 		# 	@posts = Post.where(charity_id: c.id)
 		# end
 	end
+private
+
+	def category_params
+		params.require(:category).permit
+	end
 
 end

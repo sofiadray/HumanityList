@@ -19,7 +19,7 @@
 <% if user_signed_in? %>
   <% if current_user.charities.count > 0%>
   <%= link_to "Post opportunities", new_charity_post_path(current_user.charities.last.id) %><br>
-   <%= link_to "View my charities", "#"%>
+   <%= link_to "Edit charity profile",edit_charity_path(current_user.charities.last.id) %>
    <% else %>
     <%= link_to "Build Charity Profile", new_charity_path(current_user.id) %>
     <% end %>
@@ -81,8 +81,6 @@ Find local volunteers. </h5>
   <span class="glyphicon glyphicon-user" aria-hidden="true"> </span><br>
 <h3> For volunteers </h3>
     
- 
-  
 <%= link_to "Find opportunities by Category", categories_path %><br>
 <%= link_to "Find opportunities by City", cities_path %>
 <h5> List your organization in a global registry <br>

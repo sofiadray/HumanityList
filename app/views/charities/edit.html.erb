@@ -1,13 +1,21 @@
-<div class = "col-md-4">
+
+<div class="container">
+ <div class = "col-md-12">
 <h2>Edit Details for <%= @charity.name %></h1>
 
-<%= simple_form_for @charity do |form| %>
-<%= form.input :name %>
-<%= form.input :image %>
-<%= form.input :website %>
-<%= form.input :overview %>
-<%= form.input :real, :label => "Charity status:", as: :radio_buttons, :collection => [['This is a real charity.', true], ['This is an idea for a charity.', false]] %>
-<%= form.association :category, label_method: :name %>
-<%= form.submit "Update Charity Details" %>
-<% end %>
-</div>
+ 
+
+    <%= simple_form_for @charity do |form| %>
+      <%= form.input :name, label: "Charity Name" %>
+     <%= form.input :image, class: 'btn btn-default' %>
+      <%= form.input :website %>
+      <%= form.input :donate_link %>
+      <%= form.input :overview %>
+      <%= form.input :real, :label => "Is this a real charity yet?", as: :radio_buttons, :collection => [['This is a real charity.', true], ['This is an idea for a charity.', false]] %>
+      <%= form.association :category, label_method: :name %>   
+      
+      <%= form.submit class: 'btn btn-default' %>
+    <% end %> 
+  </div>
+
+  </div>
