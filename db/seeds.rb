@@ -43,6 +43,7 @@
 
 
 # Create Cities 
+City.destroy_all
 
 State.create({name: "Alabama"})
 ["auburn","birmingham","dothan","florence / muscle shoals","gadsden-anniston","huntsville / decatur","mobile","montgomery","tuscaloosa"].each do |c|
