@@ -11,5 +11,5 @@ class CategoriesController < ApplicationController
     # 	@posts = Post.where(charity_id: c.id)
     # end
   
-
+end
 end
