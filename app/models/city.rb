@@ -2,6 +2,8 @@ class City < ActiveRecord::Base
 
   has_many :geocharitables
   has_many :charities, through: :geocharitables
+  # accepts_nested_attributes_for :geocharitables
+
   belongs_to :state
 
   validates :name, presence: true

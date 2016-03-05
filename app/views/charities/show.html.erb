@@ -16,7 +16,7 @@
     <% elsif @charity.real == false %>
       <%= "This is an idea for a charity." %>  
     <% end %>
-   
+   <%= link_to "Post a new listing", new_charity_post_path(@charity.id), class: "btn btn-default" %>
      </div>
      </div>
 <hr>
@@ -33,7 +33,7 @@
 </div>
 
   <div class="col-md-4">
-<%= link_to "Post a new listing", new_charity_post_path(@charity.id), class: "btn btn-default" %>
+
   <h3><%= t('.volunteer') %></h3>
 
   <%= link_to t('.volunteer_link'), charity_posts_path(@charity.id) %>
@@ -48,7 +48,15 @@
 
 
 </div>
-
-
+<div class ="col-md-4">
+<h3>Volunteer Opportunities:</h3>
+  <% if @charity.posts.count > 0 %>
+  <% @charity.posts.each do |p| %>
+  <h5> <%= p.title %> </h5>
+    <% end %>
+  <% else %>
+  <h5> No posts yet! Visit the <a href=<%= @charity.website %>> website</a></h5>
+  <% end %>
+  </div>
 
 </div>

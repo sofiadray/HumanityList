@@ -18,11 +18,16 @@
 
 
 body a {
-	color:blue;
+	color: blue;
+	font-family: arial;
+}
 
-	&:hover, &:visited {
-    color: blue;
-  } 
+body a:visited {
+	color: purple;
+}
+
+body a:hover {
+	color: purple;
 }
 
 span.glyphicon {
@@ -43,8 +48,5 @@ span.glyphicon {
 
 body {
 	background-color: #F2F2F2;
-}
-
-a {
-	color:blue;
+	font-family: arial;
 }
