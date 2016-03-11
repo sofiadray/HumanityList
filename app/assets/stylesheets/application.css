@@ -41,6 +41,13 @@ span.glyphicon {
 	color:blue;
 }
  
+
+.cityname{
+	font-family: times;
+	font-size: 250%;
+	color:blue;
+}
+
 #categories {
 	font-size: 120%;
 	text-align: left;

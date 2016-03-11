@@ -3,17 +3,18 @@
 
   <h2> Build Charity Profile </h2>
     <%= simple_form_for @charity do |form| %>
+    
       <%= form.input :name, label: "Charity Name" %>
-     <%= form.input :image, class: 'btn btn-default' %>
+      <%= form.input :image, class: 'btn btn-default' %>
       <%= form.input :website %>
       <%= form.input :donate_link %>
       <%= form.input :overview %>
       <%= form.input :real, :label => "Is this a real charity yet?", as: :radio_buttons, :collection => [['This is a real charity.', true], ['This is an idea for a charity.', false]] %>
       <%= form.association :category, label_method: :name %>
 
-      <%=form.fields_for :geocharitables do |g| %>
-        <%= g.association :cities, label_method: :name %> 
-        <%end %>
+      <%= form.simple_fields_for :geocharitables do |g| %>
+        <%= g.association :city, label_method: :name%> 
+        <%end%>
 
       <%= form.submit class: 'btn btn-default' %>
     <% end %> 

@@ -6,5 +6,7 @@ class CitiesController < ApplicationController
   end
 
   def show
+  	@city = City.find(params[:id])
+  	# @charities = Charity.where(city_id: @city.id)
   end
 end
