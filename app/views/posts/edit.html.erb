@@ -1,0 +1,19 @@
+<% if (user_signed_in? && (current_user.id == @charity.user_id)) %>
+<div class="container">
+  <div class = "col-md-12">
+  <center>
+  <h2> Post a new volunteer opportunity for <%= @charity.name%> </h2>
+    <%= simple_form_for @post do |form| %>
+      <%= form.input :title %>
+      <%= form.input :content %>
+      <%= form.hidden_field :charity_id, value: @charity.id %>
+      <%= form.submit "Create post", class: 'btn btn-default' %>
+    <% end %> 
+      </center>
+  </div>
+  <%else%>
+  You must <%= link_to "login", new_user_session_path
+   %> or <%= link_to "create a profile", new_user_registration_path
+   %> to view this page
+   <%end%>
+</div>

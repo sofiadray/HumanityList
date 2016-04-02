@@ -1,11 +1,16 @@
+
 <div class ="container">
+<h2> Recent Opportunities </h2>
+
 <h2>Volunteer Opportunities</h2>
 
 <hr>
 
 <% @post.each do |post| %>
-	<%= post.updated_at.month%>/<%= post.updated_at.day %>  - 
-	<%= link_to post.title, charity_post_path(post.charity_id, post.id) %><br>
+	<h3><%= post.updated_at.month %>/<%= post.updated_at.day %>  - 
+	<%= link_to post.title, charity_post_path(post.charity_id, post.id) %></h3><br>
 	<hr>
 <% end %>
+
+
 </div>
