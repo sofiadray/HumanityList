@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   devise_for :users, controllers: { registrations: "registrations" } 
   root to: "home#home"
   # devise_scope :user do
@@ -7,9 +8,8 @@ Rails.application.routes.draw do
 
   resources :cities
   resources :categories
-
-  resources :charities do
-  	resources :posts
+  resources :charities do 
+    resources :posts
   end
 
   resources :posts

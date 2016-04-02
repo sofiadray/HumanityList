@@ -1,4 +1,4 @@
-
+<% if (user_signed_in? && (current_user.id == @charity.user_id)) %>
 <div class="container">
  <div class = "col-md-12">
 <h2>Edit Details for <%= @charity.name %></h1>
@@ -19,3 +19,11 @@
   </div>
 
   </div>
+  <% else %>
+  <div class="container">
+  You must <%= link_to "login", new_user_session_path
+   %> or <%= link_to "create a profile", new_user_registration_path
+   %> to edit your charity.
+   </div>
+   <%end%>
+
