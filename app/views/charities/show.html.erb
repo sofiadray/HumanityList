@@ -1,21 +1,50 @@
 <div class="container">
-  <% flash[:message] %>
+  <%= flash[:message] %>
 
+  <div class="col-md-4">
+   <%= image_tag @charity.image, width: 100 %>
+  </div>
 
-<div class="row">
+  <div class="col-md-4">
+      <h3><%= @charity.name.capitalize %></h3><br>
+      <h5>Website: <%= link_to @charity.website, @charity.website, target: "_blank" %><br>
+      About: <%= @charity.overview %><br>
+      Category: <%= @charity.category.name %><br>
+      City: <br><br>
+      <span class="glyphicon glyphicon-gift" aria-hidden="true"></span> Donate: <%= @charity.donate_link %><br></h5>
+      <hr>
+      <h4>Volunteer Opportunities:</h4>
+        <% if @charity.posts.count > 0 %>
+          <% @charity.posts.each do |p| %>
+            <h5> <%= p.title %> </h5>
+          <% end %>
+          <%= link_to "All Opportunities", charity_posts_path(@charity.id) %>
+        <% else %>
+          <h5> No HumanityList posts yet! Visit the <a href=<%= @charity.website %>> website</a></h5>
+        <% end %>
+  </div>
+
+  <div class ="col-md-4">
+
+  </div>
+</div>
+
+<!-- ddlkmkefkwnkwenfweklfnwfnwlkefnlwkenlfkwnflwkenflwkfnlwkenflwkenflwkfnlwkenfl-->
+<!-- <div class="row">
 <div class="col-md-2">
   <%= image_tag @charity.image, width: 100 %>
   </div>
   <div class="col-md-10">
 
      <h2><%= @charity.name.capitalize %></h2>
-      <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>like 
         <% if @charity.real == true %>
       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> This is a real charity.  <br>
       (HumanityList is also for posting ideas for possible charities! Post yours here!)
     <% elsif @charity.real == false %>
       <%= "This is an idea for a charity." %>  
     <% end %>
+    <br>
+
    <%= link_to "Post a new listing", new_charity_post_path(@charity.id), class: "btn btn-default" %>
      </div>
      </div>
@@ -29,6 +58,12 @@
 <h3>Category</h3>
 
   <%= @charity.category.name %>
+
+  <h3>City</h3>
+
+
+  <% #geo = Geocharitable.where(charity_id: @charity.id) %>
+  <% #City.find(id: geo.city_id).name %>
 
 </div>
 
@@ -59,4 +94,4 @@
   <% end %>
   </div>
 
-</div>
+</div> -->

@@ -15,8 +15,8 @@ class CharitiesController < ApplicationController
   def new
     @user = User.find(current_user.id)
     @charity = @user.charities.new
-    @geocharitables = @charity.geocharitables.build
-    @city = @geocharitables.build_city
+    @geocharitable = @charity.geocharitables.build
+    # @city = @geocharitables.build_city
   end
 
   def create
@@ -25,7 +25,7 @@ class CharitiesController < ApplicationController
 
     if @charity.save
       flash[:message] = "Here is your charity's page!"
-      redirect_to charity_path(@charity.id)
+      redirect_to charity_path(id: @charity.id)
     else
       render :new
     end
