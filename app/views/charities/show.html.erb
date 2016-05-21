@@ -24,8 +24,16 @@
         <% end %>
   </div>
 
-  <div class ="col-md-4">
 
+  <div class ="col-md-4">
+    <% if user_signed_in? %>
+        <% if @charity.user %>
+        <% if @charity.user.id == current_user.id %>
+          <%= link_to "Make a new post", new_charity_post_path(@charity.id) %><br>
+          <%= link_to "Edit charity profile", edit_charity_path(@charity.id) %>
+        <% end %>
+        <% end %>
+    <% end %>
   </div>
 </div>
 
