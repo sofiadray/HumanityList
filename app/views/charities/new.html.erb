@@ -2,8 +2,15 @@
 <div class="container">
   <div class = "col-md-12">
 
-  <h2> Build Charity Profile </h2>
-    <%= simple_form_for @charity do |form| %>
+  <h2> Build a New Charity Profile </h2>
+    <%= simple_form_for @charity, html: { class: 'form-horizontal' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  } do |form| %>
     
       <%= form.input :name, label: "Charity Name" %>
       <%= form.input :image, class: 'btn btn-default' %>
