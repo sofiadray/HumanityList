@@ -12,18 +12,18 @@
     boolean: :horizontal_boolean
   } do |form| %>
     
-      <%= form.input :name, label: "Charity Name" %>
+      <%= form.input :name, label: "Charity Name", placeholder: "Your charity's name" %>
       <%= form.input :image, class: 'btn btn-default' %>
-      <%= form.input :website %>
-      <%= form.input :donate_link %>
-      <%= form.input :overview %>
+      <%= form.input :website, placeholder: "Website url" %>
+      <%= form.input :donate_link, placeholder: "The link to donate directly to your charity" %>
+      <%= form.input :overview, placeholder: "A brief overview of what your charity does" %>
       <%= form.input :real, :label => "Is this a real charity yet?", as: :radio_buttons, :collection => [['This is a real charity.', true], ['This is an idea for a charity.', false]] %>
       <%= form.association :category, label_method: :name %>
 
       <%= form.simple_fields_for @geocharitable do |g| %>
-        <%= g.association :city, label_method: :name%> 
-        <% g.hidden_field :charity_id, value: @charity.id %> 
-        <%end%>
+        <%= g.association :city, label_method: :name %> 
+        <%= g.association :charity, id: @charity.id %> 
+      <% end %>
 
       <%= form.submit class: 'btn btn-default' %>
     <% end %> 

@@ -2,8 +2,8 @@ class Charity < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :user
-  has_many :posts
 
+  has_many :posts
   has_many :geocharitables 
   has_many :cities, through: :geocharitables
   accepts_nested_attributes_for :geocharitables
