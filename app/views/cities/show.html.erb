@@ -3,6 +3,11 @@
 <div class= "cityname">
 <%= @city.name %>
 
+<% @city.geocharitables.each do |geo| %>
+<% charity = Charity.find(geo.charity_id) %>
+<h4> <%= link_to charity.name, charity_path(charity.id) %></h4> <br>
+<% end %>
+
 </div>
 
 </div>

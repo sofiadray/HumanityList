@@ -12,8 +12,8 @@
  
                   <% if user_signed_in? %>
                         <% if current_user.charities.count > 0%>
-                          <%= link_to "Post opportunities", new_charity_post_path(current_user.charities.     last.id) %><br>
-                           <%= link_to "Edit charity profile",edit_charity_path(current_user.charities.last.id) %><br>
+                          <%= link_to "Post opportunities", new_charity_post_path(current_user.charities.last.id) %><br>
+                           <%= link_to "Manage charities", "/mycharities" %><br>
                           <%= link_to "Build new charity profile",new_charity_path(current_user) %>
                         <% else %>
                           <%= link_to "Build Charity Profile", new_charity_path(current_user.id) %>

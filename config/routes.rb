@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   #   root to: "devise/sessions#new"
   # end
 
+  get "/mycharities", to: "charities#manage"
+
   resources :cities
   resources :categories
   resources :charities do 

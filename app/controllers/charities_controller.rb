@@ -8,28 +8,27 @@ class CharitiesController < ApplicationController
   end
 
   def show
-    # @user = User.find(current_user.id)
     @charity = Charity.find(params[:id])
   end
 
   def new
     @user = User.find(current_user.id)
     @charity = @user.charities.new
-    @geocharitable = @charity.geocharitables.build
-    # @city = @geocharitables.build_city
+    @charity.geocharitables.build
   end
 
   def create
     @user = User.find(current_user.id)
     @charity = @user.charities.new(charity_params)
+    @charity.geocharitables.build
 
-    if @charity.save
+    if @charity.save 
+      # && @geo.save
       flash[:message] = "Here is your charity's page!"
       redirect_to charity_path(id: @charity.id)
     else
       render :new
     end
-
   end
 
   def edit
@@ -58,10 +57,16 @@ class CharitiesController < ApplicationController
     end
   end
 
+  def manage
+    @user = User.find(current_user.id)
+  end
+
   private
 
   def charity_params
     params.require(:charity).permit(:name, :image, :website, :overview, :real, 
-                                    :category_id, :user_id, :cities =>[])
+                                    :category_id, :user_id, :cities => [], geocharitables_attributes: [:id, :charity_id, :city_id])
   end
+
+  
 end
