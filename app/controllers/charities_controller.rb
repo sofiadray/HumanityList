@@ -1,4 +1,5 @@
 class CharitiesController < ApplicationController
+
   def index
     if params[:search]
       @charities = Charity.search(params[:search]).order("created_at DESC")

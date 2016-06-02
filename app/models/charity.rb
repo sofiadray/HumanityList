@@ -5,7 +5,7 @@ class Charity < ActiveRecord::Base
 
   has_many :posts
   has_many :geocharitables 
-  has_many :cities, through: :geocharitables
+  # has_many :cities, through: :geocharitables
   accepts_nested_attributes_for :geocharitables
 
   has_attached_file :image, :styles => { :medium => "300x300>",:thumb => "100x100>" }

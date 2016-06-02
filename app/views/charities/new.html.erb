@@ -21,9 +21,9 @@
       <%= form.association :category, label_method: :name %>
 
       <%= form.simple_fields_for :geocharitables do |g| %>
-        <%= g.association :city, label_method: :name %>
+        <%= g.association :city %>
       <% end %>
-      
+
       <%= form.submit class: 'btn btn-default' %>
     <% end %> 
   </div>
