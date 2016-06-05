@@ -1,8 +1,9 @@
 <% if (user_signed_in? && (current_user.id == @charity.user_id)) %>
 <div class="container">
-  <div class = "col-md-12">
-
+  <div class = "col-md-10">
+<center>
   <h2> Build a New Charity Profile </h2>
+  </center>
     <%= simple_form_for @charity, html: { class: 'form-horizontal' },
   wrapper: :horizontal_form,
   wrapper_mappings: {
