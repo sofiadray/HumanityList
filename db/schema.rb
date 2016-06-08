@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 20160319192528) do
   add_index "cities", ["name", "state_id"], name: "index_cities_on_name_and_state_id", unique: true, using: :btree
   add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
 
+  create_table "countries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "geocharitables", force: :cascade do |t|
     t.integer  "charity_id"
     t.integer  "city_id"
@@ -122,4 +127,7 @@ ActiveRecord::Schema.define(version: 20160319192528) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "charities", "categories"
+  add_foreign_key "charities", "users"
+  add_foreign_key "posts", "charities"
 end
