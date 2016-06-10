@@ -39,7 +39,9 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Manage charities", "/mycharities" %></li>
             <li> <%= link_to "Build Charity Profile", new_charity_path(current_user.id) %></li>
-            <li> <%= link_to "Post an opportunity", new_charity_post_path(current_user.charities.last.id) %></li>
+            <% if current_user.charities.any? %>
+              <li> <%= link_to "Post an opportunity", new_charity_post_path(current_user.charities.last.id) %></li>
+            <% end %>
             <li><a href="#">Settings</a></li>
             <li role="separator" class="divider"></li>
             
