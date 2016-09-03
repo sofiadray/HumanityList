@@ -2,7 +2,11 @@
   <%= flash[:message] %>
 
   <div class="col-md-4">
+  <% if @charity.image_file_name != nil %>
    <%= image_tag @charity.image, width: 100 %>
+   <% else %>
+   <%= image_tag("heart_copy.png" ,size: "100x100" )%>
+   <% end %>
   </div>
 
   <div class="col-md-4">
