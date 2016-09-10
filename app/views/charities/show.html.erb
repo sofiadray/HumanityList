@@ -14,7 +14,7 @@
       <h5>Website: <%= link_to @charity.website, @charity.website, target: "_blank" %><br>
       About: <%= @charity.overview %><br>
       Category: <%= @charity.category.name %><br>
-      City: <br><% %><br>
+      City: <%= @charity.city.name%><br><br>
       <span class="glyphicon glyphicon-gift" aria-hidden="true"></span> Donate: <%= @charity.donate_link %><br></h5>
       <hr>
       <h4>Volunteer Opportunities:</h4>

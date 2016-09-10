@@ -20,11 +20,7 @@
       <%= form.input :overview, placeholder: "A brief overview of what your charity does" %>
       <%= form.input :real, :label => "Is this a real charity yet?", as: :radio_buttons, :collection => [['This is a real charity.', true], ['This is an idea for a charity.', false]] %>
       <%= form.association :category, label_method: :name %>
-
-      <%= form.simple_fields_for :geocharitables do |g| %>
-        <%= g.association :city %>
-      <% end %>
-
+      <%= form.association :city, label_method: :name %>
       <%= form.submit class: 'btn btn-default' %>
     <% end %> 
   </div>

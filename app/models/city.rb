@@ -1,6 +1,6 @@
 class City < ActiveRecord::Base
 
-  has_many :geocharitables
+  # has_many :geocharitables
   has_many :charities
 
   belongs_to :state

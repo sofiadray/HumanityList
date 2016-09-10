@@ -15,13 +15,13 @@ class CharitiesController < ApplicationController
   def new
     @user = User.find(current_user.id)
     @charity = @user.charities.new
-    @charity.geocharitables.build
+    # @charity.geocharitables.build
   end
 
   def create
     @user = User.find(current_user.id)
     @charity = @user.charities.new(charity_params)
-    @charity.geocharitables.build
+    # @charity.geocharitables.build
 
     if @charity.save 
       # && @geo.save
@@ -66,7 +66,9 @@ class CharitiesController < ApplicationController
 
   def charity_params
     params.require(:charity).permit(:name, :image, :website, :overview, :real, 
-                                    :category_id, :user_id, :cities => [], geocharitables_attributes: [:id, :charity_id, :city_id])
+                                    :category_id, :user_id, :city_id
+                                    # :cities => [], geocharitables_attributes: [:id, :charity_id, :city_id]
+                                    )
   end
 
   
